@@ -1,0 +1,14 @@
+#us{
+	background: red;
+	color: red;
+}
+#hos{
+	width: 320px;
+	height: 300px;
+	/*border: 1px solid;*/
+	margin-left: 36%;
+	margin-top: 12%;
+	/*background: rgba(0,0,0,0.4);*/
+	/*border-radius: 10px;*/
+	padding-top: 50px;
+}

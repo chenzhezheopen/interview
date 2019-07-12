@@ -1,0 +1,38 @@
+{
+    "mimetype": {
+        "bmp": "image/bmp",
+        "css": "text/css",
+        "dll": "application/octet-stream",
+        "exe": "application/octet-stream",
+        "gif": "image/gif",
+        "gz": "application/x-gzip",
+        "htm": "text/html",
+        "html": "text/html",
+        "ico": "image/x-icon",
+        "jpe": "image/jpeg",
+        "jpeg": "image/jpeg",
+        "jpg": "image/jpeg",
+        "js": "application/x-javascript",
+        "mov": "video/quicktime",
+        "mp3": "audio/mpeg",
+        "mpa": "video/mpeg",
+        "mpe": "video/mpeg",
+        "mpeg": "video/mpeg",
+        "mpg": "video/mpeg",
+        "pdf": "application/pdf",
+        "ra": "audio/x-pn-realaudio",
+        "rtf": "application/rtf",
+        "svg": "image/svg+xml",
+        "swf": "application/x-shockwave-flash",
+        "tif": "image/tiff",
+        "tiff": "image/tiff",
+        "txt": "text/plain",
+        "wav": "audio/x-wav",
+        "xlsx": "application/octet-stream",
+        "xls": "application/vnd.ms-excel",
+        "xlt": "application/vnd.ms-excel",
+        "zip": "application/zip"
+    }
+    
+    
+}

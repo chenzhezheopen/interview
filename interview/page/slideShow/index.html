@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<title>VueSlideShow</title>
+		<style>
+			i[attr]{color:#00c187}i[value]{color:#f90761}i[word]{color:#000}i[obj]{color:#ee6d02}i[fn]{color:#a800ff}i[note]{color:#888;font-weight:400}i[cn]{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,"PingFang SC","Microsoft YaHei",Arial,sans-serif}.container{position:relative;overflow:hidden;margin:0 auto;width:1010px;height:auto;background:#fff;box-shadow:#d6d6d6 0 0 15px}header{height:50px;background:#333;text-align:center;line-height:50px;color:#fff;font-size:17px}h1,h2{text-align:center;font-size:16px;font-weight:400;margin:30px 0}h2{margin:20px 0}p.title{text-align:center;font-size:20px;font-weight:700;margin:20px 0}.use{width:960px;overflow:hidden;margin:0 auto}.use>div{float:left;width:calc((100% - 19px)/ 2);border:#dfdfdf solid 1px;border-radius:4px;max-height:856px;overflow-y:auto;overflow-x:hidden}.use>div:last-child{margin-left:15px}.use>div::-webkit-scrollbar{width:4px}.use>div::-webkit-scrollbar-thumb{width:4px;background:#eee;border-radius:2px}.use>div p{display:block;text-align:center;height:44px;line-height:44px;border-bottom:#dfdfdf solid 1px;background:#fafafa;font-weight:700}.code{font-size:12px;line-height:170%;padding:15px;color:#2868f9}pre,pre *{font-family:Consolas}.height-200{height:200px}.placeholder{height:50px;text-align:center;overflow:hidden}#next,#prev{background:#09f;color:#fff;border:none;border-radius:4px;cursor:pointer;width:60px;height:30px;margin-top:15px}#custom-dot{text-align:center;margin:25px 0 0 0}#custom-dot i{display:inline-block;width:12px;height:12px;background:#ddd;border-radius:50%;cursor:pointer;margin:0 10px;transition:.2s}#custom-dot i.active{background:#222}
+		</style>
+	</head>
+	<body>
+	    
+	    			<div id="app-4" class="height-200">
+	    				<vue-slideshow :data="images" :config="config"></vue-slideshow>
+	    			</div>
+	    			<div class="placeholder">
+		    			<div id="custom-dot">
+						    <i class="active"></i>
+						    <i></i>
+						    <i></i>
+						    <i></i>
+						    <i></i>
+						</div>
+					</div>
+	    			
+		<script src="http://www.jq22.com/jquery/vue.min.js"></script>
+		<script src="vue-slideshow.min.js"></script>
+		<script>
+			
+		    new Vue({
+		        el: "#app-4",
+		        data: {
+		            images: [
+		                { src: "1.jpg", href: "#1" },
+		                { src: "2.jpg", href: "#2" },
+		                { src: "3.jpg", href: "#3" },
+		                { src: "4.jpg", href: "#4" },
+		                { src: "5.jpg", href: "#5" }
+		            ],
+		            config: {
+		                effect: "slide",
+		                dot: "#custom-dot"
+		            }
+		        }
+		    });
+		</script>
+
+	</body>
+</html>

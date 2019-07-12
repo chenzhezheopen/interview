@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/hoshou.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/hoshou.js"></script>
+	</head>
+	<body onload="send()">
+		<div id="main">
+			<div>
+				<center>
+				 	<ul id="uui">
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-user"></span></div><a href="">个人中心</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-star"></span></div><a href="">关注病人</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-align-center"></span></div><a href="">个人日程</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-thumbs-up"></span></div><a href="">评价</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-earphone"></span></div><a href="">病人电话</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-plus"></span></div><a href="">开方记录</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-envelope"></span></div><a href="">消息</a></li>
+				 		<li><div style="color: rgb(212, 106, 64); float: left;"><span class="glyphicon glyphicon-asterisk"></span></div><a href="">设置</a></li>
+				 	</ul>
+			 	</center>
+			</div>
+		</div>
+		<div id="top">
+			<center>
+				<a id="ii" onclick="wer()"></a>
+			</center>
+		</div>
+		<div id="xinxi">
+			<div id="xin">
+				 	<ul id="uzi">
+				 		<li><a href="">姓名:</a><a id="name"></a></li>
+				 		<li><a href="">职位:</a><a id="pos"></a></li>
+				 		<li><a href="">科室:</a><a id="occ"></a></li>
+				 		<li><a href="">点赞:</a><a id="fab"></a></li>
+				 		<li><a href="">工资:</a><a id="wsg"></a></li>
+				 		<li><a href="">账号:</a><a id="user"></a></li>
+				 		<li><a href="">密码:</a><a id="pwd"></a></li>
+				 	</ul>
+				 	<!--<ul>
+				 		<li><a href="">职位</a></li>
+				 		<li><a href="">科室</a></li>
+				 	</ul>-->
+			</div>
+			<div class="row">
+			  <div class="col-lg-offset-8 col-xs-6 col-md-3">
+			    <a href="#" class="thumbnail">
+			      <img src="..." id="im" alt="...">
+			    </a>
+			  </div>
+			  ...
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+    var sock = null;
+    var wsuri = "ws://localhost:5656/land";
+//  var usurl = "ws://localhost:5656/add";
+
+    document.ready = function() {
+    	
+        //可以看到客户端JS，很容易的就通过WebSocket函数建立了一个与服务器的连接sock，当握手成功后，会触发WebScoket对象的onopen事件，告诉客户端连接已经成功建立。客户端一共绑定了四个事件。
+        console.log("开始了 onload");
+        sock = new WebSocket(wsuri);
+//      sock1 = new WebSocket(wsurl);
+       
+        sock.zonopen = function() {
+            console.log(" 建立连接后触发 connected to " + wsuri);
+        }
+        // 关闭连接时候触发
+        sock.onclose = function(e) {
+            console.log("关闭连接时候触发 connection closed (" + e.code + ")");
+        }
+        // 收到消息后触发
+        sock.onmessage = function(e) {
+            var data=JSON.parse(e.data);
+//          console.log("收到消息后触发 message received: " + e.data);
+//          console.log("收到消息后触发 message received: " + data.Value.Name);
+            document.getElementById("name").innerText=data.Value.Name
+            document.getElementById("pos").innerText=data.Value.Position
+            document.getElementById("occ").innerText=data.Value.Occ
+            document.getElementById("fab").innerText=data.Value.Fab
+            document.getElementById("wsg").innerText=data.Value.Wag
+            document.getElementById("user").innerText=data.Value.User
+            document.getElementById("pwd").innerText=data.Value.Pwd
+            document.getElementById("im").src="image/"+data.Value.Img
+        }
+        //发生错误的时候触发
+        sock.onerror=function (e) {
+            console.log("发生错误时候触发"+wsuri)
+        }
+    };
+     //如果sock被关闭掉了 这里 也会报错的啊
+     window.onload=function(){
+     	var msg = document.getElementById("ii").innerText;
+        sock.send(msg);
+     }
+    function wer() {
+//  	alert("123")
+        var msg = document.getElementById("ii").innerText;
+        sock.send(msg);
+    };
+</script>
+</html>

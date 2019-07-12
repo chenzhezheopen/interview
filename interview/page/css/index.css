@@ -1,0 +1,62 @@
+.box1{
+	margin-top: 10%;
+	width: 100%;
+ 	display: flex;
+    justify-content:center;
+    align-items:Center;      
+    
+}
+.box1 span{
+	font-family:"仿宋";
+	font-weight:900;
+	
+	font-size: 50px;
+	color:#000000;
+}
+.box2{
+	width: 56%;
+	background-color: rgba(255,255,255,0.4);
+	margin-top: 12%;
+	height: 200px;
+	padding: 30px;
+	box-sizing:content-box;
+	border-radius: 4px;
+}
+.box2 div:nth-child(1){
+	width: 47%;
+	height: 100%;
+	float: left;
+	border-radius: 10px;
+	background-color:rgba(254,129,169,1);
+}
+.box2 a{
+	font-size: 20px;
+	font-family:"新宋体" ;
+	font-weight: bold;
+	color:#FFFFFF;
+}
+.box2 img{
+	width: 22%;
+	height: 37%;
+}
+.box2 div:nth-child(2){
+	margin-left: 6%;
+	width: 47%;
+	float: left;
+	height: 100%;
+	border-radius: 10px;
+	background-color:rgba(61,199,198,1);
+}
+.box2 div{
+	cursor: pointer;
+}
+/*.box2 div:nth-child(2) img{
+	width: 22%;
+	height: 37%;
+}*/
+/*.box2 div:nth-child(2) a{
+	font-size: 20px;
+	font-family:"新宋体" ;
+	font-weight: bold;
+	color:#FFFFFF;
+}*/
